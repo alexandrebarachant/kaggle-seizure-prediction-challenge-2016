@@ -2,7 +2,7 @@ from glob import glob
 from scipy.stats import rankdata
 import pandas as pd
 import numpy as np
-default = pd.read_csv('./sample_submission.csv', index_col=0)
+default = pd.read_csv('./csv_files/sample_submission.csv', index_col=0)
 base = './submissions/'
 
 weights = {'Alex_Gilberto_all_flat_dataset_XGB.csv': 1.,
