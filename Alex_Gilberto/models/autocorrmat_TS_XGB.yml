@@ -1,0 +1,27 @@
+output:  Alex_Gilberto_autocorrmat_TS_XGB
+
+datasets:
+  - autocorrmat
+
+n_jobs: 1
+safe_old: True
+
+imports:
+  models:
+    - CoherenceToTangent
+  xgboost:
+    - XGBClassifier
+  sklearn.ensemble:
+    - BaggingClassifier
+
+model:
+  - CoherenceToTangent:
+      tsupdate: False
+      metric: '"identity"'
+      n_jobs: 8
+  - BaggingClassifier:
+      max_samples: 0.99
+      max_features: 0.99
+      random_state: 666
+      n_estimators: 4
+      base_estimator: XGBClassifier(n_estimators=500, learning_rate=0.01, max_depth=4, subsample=0.50, colsample_bytree=0.50, colsample_bylevel=1.00, min_child_weight=2, seed=42)

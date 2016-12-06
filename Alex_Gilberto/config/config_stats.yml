@@ -1,0 +1,11 @@
+output: stats
+
+imports:
+  preproc:
+    - BasicStats
+    - Windower
+
+preproc:
+  - Windower:
+      window: 20
+  - BasicStats:

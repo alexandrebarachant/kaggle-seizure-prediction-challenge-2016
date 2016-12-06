@@ -1,0 +1,11 @@
+output: various
+
+imports:
+  preproc:
+    - VariousFeatures
+    - Windower
+
+preproc:
+  - Windower:
+      window: 20
+  - VariousFeatures:

@@ -28,6 +28,6 @@ out = []
 for ii, fn in enumerate(fnames):
     res = pd.read_csv(base + fn, index_col='File')
     res.loc[res.index, 'Class'] = rankdata(res.Class) / len(res)
-    default.loc[default.index, 'Class'] += weights[fn.replace(base, '')] * res.loc[default.index, 'Class']
+    default.loc[default.index, 'Class'] += weights[fn] * res.loc[default.index, 'Class']
 
 default.to_csv('./submissions/Winning_submission.csv)

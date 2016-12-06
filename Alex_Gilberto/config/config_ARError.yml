@@ -1,0 +1,13 @@
+output: arError
+
+imports:
+  preproc:
+    - ARError
+    - Windower
+
+preproc:
+  - Windower:
+      window: 20
+  - ARError:
+      subsample: 4
+      order: 5

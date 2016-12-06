@@ -1,0 +1,13 @@
+output: autocorrmat
+
+imports:
+  preproc:
+    - AutoCorrMat
+    - Windower
+
+preproc:
+  - Windower:
+      window: 20
+  - AutoCorrMat:
+      order: [1, 2, 4, 8, 16, 32, 64]
+      subsample: 2
