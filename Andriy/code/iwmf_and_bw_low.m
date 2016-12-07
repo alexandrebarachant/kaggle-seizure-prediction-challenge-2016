@@ -1,0 +1,12 @@
+function [mean_freq,bw]=iwmf_and_bw_low(data,Fs)
+power = ceil(log2(length(data)));        
+N = 2^power;                       
+[fft_result,freq] = pwelch(data,[],[],N,Fs);
+fft_result = fft_result(1:end-2); 
+freq = freq(1:end-2);
+i = freq/Fs*N;  
+sum_pi = sum(fft_result);
+df = Fs/N;
+mean_freq = sum(fft_result.*i.*df) / sum_pi;
+fm_minus_idf_squared = (-i.*df+mean_freq).^2;
+bw = sqrt( sum(fft_result.*fm_minus_idf_squared) / sum_pi );
