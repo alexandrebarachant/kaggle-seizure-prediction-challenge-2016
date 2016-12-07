@@ -22,6 +22,6 @@ to generate features :
 
 to generate models
 
-`sh batch_submission.sh`
+`sh batch_submissions.sh`
 
 output files will be placed in the `submission` folder at the root of the repository
