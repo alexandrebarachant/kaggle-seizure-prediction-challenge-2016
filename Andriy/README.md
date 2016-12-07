@@ -1,4 +1,4 @@
-* Run in Matlab the following 4 scripts (in any order or in parallel) to extract 4 features sets:
+* Run in Matlab the following 4 scripts (in any order or in parallel) to extract 4 feature sets:
 
 Autoregressive modelling errors (might take a while to extract):
 
