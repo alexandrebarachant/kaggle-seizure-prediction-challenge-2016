@@ -8,7 +8,7 @@ nFeat = 1632+9+180+144;
 [safenameTr(:,1), safenameTr(:,2), safenameTr(:,3), safenameTr(:,4), safenameTr(:,5)] = textread('./code/train_safe.csv', '%d %d %d %d %d', -1, 'delimiter',',');
 
 for ii=1:size(classID,2)
-    folderTr = ['../feat/train_' classID{ii} '/'];
+    folderTr = ['./feat/train_' classID{ii} '/'];
     mysafeidxTr = intersect(intersect(find(safenameTr(:,1)==ii),find(safenameTr(:,5)==1)),find(safenameTr(:,4)==1));
     fprintf('\nPreictal feature loading and imputation');
     newF_P = zeros(150*20,nFeat);
@@ -53,7 +53,7 @@ for ii=1:size(classID,2)
     end
     newF_P(cur:end,:) = [];
     
-    folderTr = ['../feat/test_' classID{ii} '/'];
+    folderTr = ['./feat/test_' classID{ii} '/'];
     mysafeidxT = intersect(intersect(find(safenameT(:,1)==ii),find(safenameT(:,4)==1)),find(safenameT(:,3)==1));
     fprintf('\nPreictal feature loading and imputation');
     newF_P1 = zeros(150*20,nFeat);
@@ -97,7 +97,7 @@ for ii=1:size(classID,2)
     newF_P1(cur:end,:) = [];
     
     
-    folderTr = ['../feat/train_' classID{ii} '/'];
+    folderTr = ['./feat/train_' classID{ii} '/'];
     fprintf('\nInterictal feature loading and imputation');
     mysafeidxTr = intersect(intersect(find(safenameTr(:,1)==ii),find(safenameTr(:,5)==1)),find(safenameTr(:,4)==0));
     newF_I = zeros(2000*20,nFeat);
@@ -142,7 +142,7 @@ for ii=1:size(classID,2)
     end
     newF_I(cur:end,:) = [];
     
-    folderTe = ['../feat/test_' classID{ii} '_new/'];
+    folderTe = ['./feat/test_' classID{ii} '_new/'];
     myfl = dir([folderTe '*_feat.mat']);
     newF_T = zeros(size(myfl,1)*20,nFeat);
     fprintf('\nTest feature loading and imputation');
