@@ -1,11 +1,11 @@
 library(xgboost)
 library(Matrix)
 library("R.matlab")
-library(caret)
+#library(caret)
 set.seed(1234)
 testid <- NULL
 testpreds <- NULL
-testpreds1 <- NULL
+#testpreds1 <- NULL
 for (i in 1:3) {
   cat('\n',i)
   data = readMat(paste('train_ALL',i,'.mat', sep = ''))
