@@ -1,4 +1,4 @@
-1. Run in Matlab the following 4 scripts (in any order or in parallel) to extract 4 features sets:
+* Run in Matlab the following 4 scripts (in any order or in parallel) to extract 4 features sets:
 
 Autoregressive modelling errors (might take a while to extract):
 
@@ -17,11 +17,11 @@ Mainstream EEG feature from each channel:
 FE_main_F.m
 
 
-2. Run in Matlab the following script to prepare the data for training (read the data, impute missing values, and save the data for each patient): 
+* Run in Matlab the following script to prepare the data for training (read the data, impute missing values, and save the data for each patient): 
 
 data_preprocess.m 
 
-3. Run in R the following scripts to create models and submission files:
+* Run in R the following scripts to create models and submission files:
 
 Creates GLM model and submission
 
