@@ -1,16 +1,16 @@
 library(xgboost)
-library(randomForest)
+#library(randomForest)
 library(Matrix)
 library("R.matlab")
-library(caret)
+#library(caret)
 set.seed(1234)
 testid <- NULL
-testpreds1 <- NULL
+#testpreds1 <- NULL
 testpreds2 <- NULL
-testpreds3 <- NULL
-library(glmnet)
+#testpreds3 <- NULL
+#library(glmnet)
 library(LiblineaR)
-library(MASS)
+#library(MASS)
 
 for (i in 1:3) {
   data = readMat(paste('train_ALL',i,'.mat', sep = ''))
