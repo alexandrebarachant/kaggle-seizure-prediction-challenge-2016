@@ -38,7 +38,7 @@ for (i in 1:3) {
 
   glmmod = glmnet(x=as.matrix(train[,as.numeric(importance$Feature[1:300])]), y=train.y, alpha=1,family = 'binomial')
   dec1_4 = predict(glmmod,as.matrix(data$newF.T[,as.numeric(importance$Feature[1:300])]),s=0.0001,type="response")
-  save('glmmod', 'importance', file = paste('glm_models300_pat_',i,sep="")); 
+  save('glmmod', 'importance', file = paste('./models/glm_models300_pat_',i,sep="")); 
   
   myddd <- matrix(0, 1, nrow(data$newF.T))
   myddd [data$goodidx] = 1;
