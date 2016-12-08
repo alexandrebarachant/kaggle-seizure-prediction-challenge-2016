@@ -57,6 +57,7 @@ for (i in 1:3) {
   
   dec <- dectmp
   dec[myddd] <- 0;
+  testid = c(testid,paste('new_',i,'_',1:nrow(dec),'.mat',sep=''))
   testpreds2 = c(testpreds2,dec)
   
 }
