@@ -57,4 +57,4 @@ for (i in 1:3) {
 }
 submission <- data.frame(File=testid, Class=testpreds1)
 cat("saving the submission file\n")
-write.csv(submission, "../submissions/submissionLR5_3_glmnet.csv", row.names = F)
+write.csv(submission, "../submissions/Andriy_submissionLR5_3_glmnet.csv", row.names = F)
