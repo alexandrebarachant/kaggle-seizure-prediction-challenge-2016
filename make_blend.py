@@ -9,10 +9,10 @@ weights = {'Alex_Gilberto_all_flat_dataset_XGB.csv': 1.,
            'Alex_Gilberto_autocorrmat_TS_XGB.csv': 1.,
            'Alex_Gilberto_coherences_transposed_TS_XGB.csv': 1.,
            'Alex_Gilberto_relative_log_power_XGB.csv': 1.,
-           'Feng_6bands.csv': 1.,
+           'Feng_xgb.csv': 1.,
            'Feng_knn.csv': 1.,
            'Feng_knnmorefeature.csv': 1.,
-           'Feng_morefeatureslasso.csv': 1.,
+           'Feng_glmmorefeature.csv': 1.,
            'Andriy_submission5_7_SVM.csv': 1.,
            'Andriy_submissionLR5_3_glmnet.csv': 1.,
            'Andriy_submissionXGB7_5mean.csv': 1.}
@@ -30,4 +30,4 @@ for ii, fn in enumerate(fnames):
     res.loc[res.index, 'Class'] = rankdata(res.Class) / len(res)
     default.loc[default.index, 'Class'] += weights[fn] * res.loc[default.index, 'Class']
 
-default.to_csv('./submissions/Winning_submission.csv)
+default.to_csv('./submissions/Winning_submission.csv')

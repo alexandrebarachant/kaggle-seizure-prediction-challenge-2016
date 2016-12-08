@@ -1,0 +1,19 @@
+{
+        "path":{
+        "root" : "../",
+        "raw_data_path" : "../data",
+        "processed_data_path" :"./postprocessedfile",
+        "submission_path" : "../submissions" 
+    },
+
+    "preprocessor":{
+        "highcut" : 180,
+        "lowcut" : 0.1,
+        "nfreq_bands": 6,
+        "win_length_sec": 30,
+        "features": "meanlog_std",
+        "stride_sec": 30
+    }
+
+
+}

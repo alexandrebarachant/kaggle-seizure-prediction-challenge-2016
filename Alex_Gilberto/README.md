@@ -8,11 +8,12 @@ install python 2.7 with the following dependencies:
 - scikit-learn
 - pyriemann
 - mne-python
+- xgboost
 - progressbar
 - pyyaml
 
 
-`pip install numpy scipy pandas scikit-learn pyriemann mne progressbar pyyaml`
+`pip install numpy scipy pandas scikit-learn pyriemann mne progressbar pyyaml xgboost`
 
 ## Run the solution
 
