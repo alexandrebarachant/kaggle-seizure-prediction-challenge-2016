@@ -1,13 +1,13 @@
 library(xgboost)
-library(randomForest)
+#library(randomForest)
 library(Matrix)
 library("R.matlab")
-library(caret)
+#library(caret)
 set.seed(1234)
 testid <- NULL
-testpreds1 <- NULL
+testpreds <- NULL
 library(glmnet)
-library(LiblineaR)
+#library(LiblineaR)
 
 
 for (i in 1:3) {
@@ -36,25 +36,33 @@ for (i in 1:3) {
   
   data$newF.T[is.na(data$newF.T)]   <- 0
 
-  glmmod = glmnet(x=as.matrix(train[,as.numeric(importance$Feature[1:300])]), y=train.y, alpha=1,family = 'binomial')
-  dec1_4 = predict(glmmod,as.matrix(data$newF.T[,as.numeric(importance$Feature[1:300])]),s=0.0001,type="response")
-  save('glmmod', 'importance', file = paste('glm_models300_pat_',i,sep="")); 
+  glmmod1 = glmnet(x=as.matrix(train[,as.numeric(importance$Feature[1:300])]), y=train.y, alpha=0,family = 'binomial')
+  dec1_11 = predict(glmmod1,as.matrix(data$newF.T[,as.numeric(importance$Feature[1:300])]),s=0.0001,type="response")
+
+  glmmod2 = glmnet(x=as.matrix(train[,as.numeric(importance$Feature[1:300])]), y=train.y, alpha=0,family = 'binomial')
+  dec1_12 = predict(glmmod2,as.matrix(data$newF.T[,as.numeric(importance$Feature[1:300])]),s=0.0001,type="response")
+
+  glmmod3 = glmnet(x=as.matrix(train[,as.numeric(importance$Feature[1:300])]), y=train.y, alpha=0,family = 'binomial')
+  dec1_13 = predict(glmmod3,as.matrix(data$newF.T[,as.numeric(importance$Feature[1:300])]),s=0.0001,type="response")
+
+  save('glmmod1','glmmod2','glmmod3', 'importance', file = paste('./models/glm_models300_pat_',i,sep="")); 
+  
+  dec1 <- cbind(dec1_11,dec1_12,dec1_13)
+  dec2 <- apply(dec1, 2, function (x) apply(matrix(x,nrow = 19),2,function (x) max(x)))
   
   myddd <- matrix(0, 1, nrow(data$newF.T))
   myddd [data$goodidx] = 1;
   myddd <- matrix(myddd, nrow = 19)
   myddd <- colMeans(myddd); myddd = which(myddd == 0);
-  
-  dec = matrix(0,1,length(dec1_4)); dec[data$goodidx] = dec1_4[data$goodidx];
-  dec <- matrix(dec, nrow = 19)
-  dectmp <- apply(dec,2,function(x) max(x))
-  dectmp[myddd] <- 0 
-  dectmp[which(is.na(dectmp))] <-0
-  
-  testid = c(testid,paste('new_',i,'_',1:length(dectmp),'.mat',sep=''))
-  testpreds1 = c(testpreds1,dectmp)
-  
+
+  dec2[myddd,] <- 0;
+  testid = c(testid,paste('new_',i,'_',1:nrow(dec2),'.mat',sep=''))
+  testpreds = rbind(testpreds,dec2)
+ 
 }
-submission <- data.frame(File=testid, Class=testpreds1)
+dec3 <- apply(testpreds, 2, function(x)  rank(x,ties.method='average'))/(nrow(testpreds))
+dec4 <- apply(dec3, 1, function(x)  mean(x))
+
+submission <- data.frame(File=testid, Class=dec4)
 cat("saving the submission file\n")
-write.csv(submission, "../submissions/submissionLR5_3_glmnet.csv", row.names = F)
+write.csv(submission, "../submissions/Andriy_submissionLR5_3_glmnet.csv", row.names = F)
