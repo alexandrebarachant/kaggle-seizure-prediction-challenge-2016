@@ -87,7 +87,7 @@ Total training time (including feature extraction) is estimated to less than 5 h
 
 **Features** :
 
-- the standard deviation and average spectral power in delta (0.1–4 Hz), theta (4–8 Hz), alpha (8–12 Hz), beta (12–30 Hz), low gamma (30–70 Hz) and high gamma (70–180Hz)
+- The standard deviation and average spectral power in delta (0.1–4 Hz), theta (4–8 Hz), alpha (8–12 Hz), beta (12–30 Hz), low gamma (30–70 Hz) and high gamma (70–180Hz)
 - The correlation in time domain and frequency domain (upper triangle values of correlation matrices) with their eigenvalues.
 
 **Models** :
