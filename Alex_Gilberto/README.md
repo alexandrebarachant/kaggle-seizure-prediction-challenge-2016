@@ -21,8 +21,12 @@ to generate features :
 
 `sh batch_features.sh`
 
+this step will take between 3 and 4 hour depending on your hardware configuration
+
 to generate models
 
 `sh batch_submissions.sh`
+
+this step will take between 2 and 3 hour depending on your hardware configuration
 
 output files will be placed in the `submission` folder at the root of the repository
