@@ -81,9 +81,9 @@ When slicing larger 10 min segment with a 20s time window, comes the question of
 
 A total of 4 models were selected for the final ensemble (see table 2)
 
-**Preprocessing :** The Butterworth filter (5th order with 0.1-180 HZ cutoff ) was firstly applied to the raw data and then Ipartitioned  the raw data into non-overlapping 30s windows. A combination of arithmetic mean of individual analysis windows was used to aggregate them into a single probability score for each 10-minute segment.
+**Preprocessing :** The Butterworth filter (5th order with 0.1-180 HZ cutoff ) was firstly applied to the raw data and then Ipartitioned  the raw data into non-overlapping 30s windows(for GLM model, I used non-overlapping 50s windows). A combination of arithmetic mean of individual analysis windows was used to aggregate them into a single probability score for each 10-minute segment.
 
-Total training time (including feature extraction) is estimated to less than 6 hours for these 4 models on my 8 GB RAM MacBook Pro .
+Total training time (including feature extraction) is estimated to less than 5 hours for these 4 models on my 8 GB RAM MacBook Pro .
 
 **Features** :
 
@@ -93,7 +93,7 @@ Total training time (including feature extraction) is estimated to less than 6 h
 **Models** :
 
 1. Standard deviation and average spectral power were used in the XGB classifier and KNN classifier.
-2. All features were used in Logistic Regression with L1 penalty(Lasso).
+2. All features were used in Logistic Regression with L2 penalty(Ridge).
 3. All features were used in the second KNN classifier.
 
 **Remark**
