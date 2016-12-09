@@ -7,7 +7,7 @@ set.seed(1234)
 testid <- NULL
 testpreds <- NULL
 library(glmnet)
-#library(LiblineaR)
+library(LiblineaR)
 
 
 for (i in 1:3) {
@@ -36,18 +36,20 @@ for (i in 1:3) {
   
   data$newF.T[is.na(data$newF.T)]   <- 0
 
-  glmmod1 = glmnet(x=as.matrix(train[,as.numeric(importance$Feature[1:300])]), y=train.y, alpha=0,family = 'binomial')
-  dec1_11 = predict(glmmod1,as.matrix(data$newF.T[,as.numeric(importance$Feature[1:300])]),s=0.0001,type="response")
+  glmmod1 = glmnet(x=as.matrix(train[,as.numeric(importance$Feature[1:200])]), y=train.y, alpha=0,family = 'binomial')
+  dec1_11 = predict(glmmod1,as.matrix(data$newF.T[,as.numeric(importance$Feature[1:200])]),s=0.0001,type="response")
 
-  glmmod2 = glmnet(x=as.matrix(train[,as.numeric(importance$Feature[1:300])]), y=train.y, alpha=0,family = 'binomial')
-  dec1_12 = predict(glmmod2,as.matrix(data$newF.T[,as.numeric(importance$Feature[1:300])]),s=0.0001,type="response")
+  glmmod2 = glmnet(x=as.matrix(train[,as.numeric(importance$Feature[1:100])]), y=train.y, alpha=0,family = 'binomial')
+  dec1_12 = predict(glmmod2,as.matrix(data$newF.T[,as.numeric(importance$Feature[1:100])]),s=0.0001,type="response")
 
-  glmmod3 = glmnet(x=as.matrix(train[,as.numeric(importance$Feature[1:300])]), y=train.y, alpha=0,family = 'binomial')
-  dec1_13 = predict(glmmod3,as.matrix(data$newF.T[,as.numeric(importance$Feature[1:300])]),s=0.0001,type="response")
+  s=scale(train[,as.numeric(importance$Feature[1:200])],center=TRUE,scale=TRUE); 
+  mod1=LiblineaR(data=s,target=as.factor(train.y),type=6, cost = 10, bias=TRUE,verbose=FALSE); 
+  s2=scale(data$newF.T[,as.numeric(importance$Feature[1:200])],attr(s,"scaled:center"),attr(s,"scaled:scale"))
+  dec1_21 = predict(mod1,s2,proba = TRUE); 
 
-  save('glmmod1','glmmod2','glmmod3', 'importance', file = paste('./models/glm_models300_pat_',i,sep="")); 
+  save('glmmod1','glmmod2','mod1', 'importance', file = paste('./models/glm_models300_pat_',i,sep="")); 
   
-  dec1 <- cbind(dec1_11,dec1_12,dec1_13)
+  dec1 <- cbind(dec1_11,dec1_12, dec1_21$probabilities[,1])
   dec2 <- apply(dec1, 2, function (x) apply(matrix(x,nrow = 19),2,function (x) max(x)))
   
   myddd <- matrix(0, 1, nrow(data$newF.T))
