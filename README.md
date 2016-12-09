@@ -3,7 +3,7 @@
 **Authors**:
 * [Alexandre Barachant](http://alexandre.barachant.org)
 * [Andriy Temko](https://scholar.google.com/citations?user=qgR0hx0AAAAJ)
-* [Feng Li]()
+* [Feng Li](https://www.linkedin.com/in/feng-li-795b97117)
 * [Gilberto Titericz Junior](https://br.linkedin.com/in/gilberto-titericz-jr-6601357)
 
 **Contents** :
