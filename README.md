@@ -2,7 +2,7 @@
 
 **Authors**:
 * [Alexandre Barachant](http://alexandre.barachant.org)
-* [Andriy Temko]()
+* [Andriy Temko](https://scholar.google.com/citations?user=qgR0hx0AAAAJ)
 * [Feng Li]()
 * [Gilberto Titericz Junior]()
 
