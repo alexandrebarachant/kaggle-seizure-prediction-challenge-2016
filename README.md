@@ -137,15 +137,15 @@ Table 3.
 | Model name | Public Score |  Private Score |
 | --- | --- | --- |
 | Andriy\_submission5\_7\_SVM.csv | 0.73580 | 0.75369 |
-| Andriy\_submissionLR5\_3\_glmnet.csv | ?? | ?? |
+| Andriy\_submissionLR5\_3\_glmnet.csv | 0.71313 | 0.75856 |
 | Andriy\_submissionXGB7\_5mean.csv | 0.77310 | 0.77237 |
-| **Ensemble** | *??** | **??** |
+| **Ensemble** | *0.75774** | **0.78247** |
 
 ## Whole team Ensemble
 
 Table 4.
 
-| **Ensemble** | **??** | **??** |
+| **Ensemble** | **0.80630** | **0.80856** |
 | --- | --- | --- |
 
 ***comment:*** due to some reproducibility issues discovered during code release, the score of the ensemble obtained from this code is different from the one submitted durring the competition. New score shows a slight increase in private score and slight decrease in public score.
@@ -183,4 +183,3 @@ The solution can be reproduced in three steps :
 ## Instruction for Hold-out evaluation
 
 The best solution is to replace new_test data with hold out data using the same file s naming convention, and re-generate the solution from scratch following the three steps above.
-
