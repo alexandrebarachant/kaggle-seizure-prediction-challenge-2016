@@ -87,18 +87,19 @@ Total training time (including feature extraction) is estimated to less than 5 h
 
 **Features** :
 
-- The standard deviation and average spectral power in delta (0.1–4 Hz), theta (4–8 Hz), alpha (8–12 Hz), beta (12–30 Hz), low gamma (30–70 Hz) and high gamma (70–180Hz)
-- The correlation in time domain and frequency domain (upper triangle values of correlation matrices) with their eigenvalues.
+- Feature 1: The standard deviation and average spectral power in delta (0.1–4 Hz), theta (4–8 Hz), alpha (8–12 Hz), beta (12–30 Hz), low gamma (30–70 Hz) and high gamma (70–180Hz)
+- Feature 2: The correlation in time domain and frequency domain (upper triangle values of correlation matrices) with their eigenvalues.
 
 **Models** :
 
-1. Standard deviation and average spectral power were used in the XGB classifier and KNN classifier.
-2. All features were used in Logistic Regression with L2 penalty(Ridge).
+1. XGB with feature 1
+2. KNN with feature 1
 3. All features were used in the second KNN classifier.
+4. All features were used in Logistic Regression with L2 penalty(Ridge).
 
 **Remark**
 
-I read relevant papers at the beginning of this competition and found one could generate thousands of features from the raw EEG. Because I don&#39;t have background of signal digital processing, I generated those features based on common features used in some important papers and my intuition. Too many noise features and correlated features would damage the performance of most classifiers.
+I read relevant papers at the beginning of this competition and found one could generate thousands of features from the raw EEG. Because I don't have background of signal digital processing, I generated those features based on common features used in some important papers and my intuition. Too many noise features and correlated features would damage the performance of most classifiers.
 
 Table 2.
 
