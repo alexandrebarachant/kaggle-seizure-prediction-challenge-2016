@@ -149,7 +149,7 @@ Table 4.
 | --- | --- | --- |
 | **Ensemble** | **0.80630** | **0.80856** |
 
-***comment:*** due to some reproducibility issues discovered during code release, the score of the ensemble obtained from this code is different from the one submitted durring the competition. New score shows a slight increase in private score and slight decrease in public score.
+***comment:*** Due to some reproducibility issues discovered during code release, the score of the ensemble obtained from this code is different from the one submitted durring the competition. New score shows a slight increase in private score and slight decrease in public score.
 
 ## CV method
 
@@ -165,9 +165,9 @@ Finally, our CV score is mainly composed of observing the score of the 2 approac
 
 > [1] Barachant, A., et al., Classification of covariance matrices using a Riemannian-based kernel for BCI applications,  Neurocomputing 112 (2013): 172-178.
 
-> [2] Temko, A., et al., EEG-based neonatal seizure detection with support vector machines, Clin. Neurophysiol. 122 (2011) 464-473.
+> [2] Temko, A., et al., EEG-based neonatal seizure detection with support vector machines, Clin. Neurophysiol. 122 (2011): 464-473.
 
-> [3] Temko, A., et al., Performance assessment for EEG-based neonatal seizure detectors, Clin. Neurophysiol. 122 (2011) 474-82.
+> [3] Temko, A., et al., Performance assessment for EEG-based neonatal seizure detectors, Clin. Neurophysiol. 122 (2011): 474-82.
 
 ## Reproduce the solution
 
