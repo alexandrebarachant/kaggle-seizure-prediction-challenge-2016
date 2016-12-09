@@ -163,11 +163,11 @@ Finally, our CV score is mainly composed of observing the score of the 2 approac
 
 ## References
 
-> [1] Barachant, A., et al. Classification of covariance matrices using a Riemannian-based kernel for BCI applications.&quot; Neurocomputing 112 (2013): 172-178.
+> [1] Barachant, A., et al., Classification of covariance matrices using a Riemannian-based kernel for BCI applications,  Neurocomputing 112 (2013): 172-178.
 
-> [2]. A. Temko, E. Thomas, W. Marnane, G. Lightbody, G. Boylan, EEG-based neonatal seizure detection with support vector machines, Clin. Neurophysiol. 122 (2011) 464-473.
+> [2] Temko, A., et al., EEG-based neonatal seizure detection with support vector machines, Clin. Neurophysiol. 122 (2011) 464-473.
 
-> [3]. A. Temko, E. Thomas, W. Marnane, G. Lightbody, G. Boylan, Performance assessment for EEG-based neonatal seizure detectors, Clin. Neurophysiol. 122 (2011) 474-82.
+> [3] Temko, A., et al., Performance assessment for EEG-based neonatal seizure detectors, Clin. Neurophysiol. 122 (2011) 474-82.
 
 ## Reproduce the solution
 
