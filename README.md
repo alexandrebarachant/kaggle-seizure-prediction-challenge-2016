@@ -35,25 +35,25 @@ For all models, preprocessing consisted in segmentation of the 10 minutes segmen
 
 Total training time (including feature extraction) is estimated to less than half a day for these 4 models. We used python, scikit-learn, pyRiemann, xgboost, mne-python and pandas.
 
-#### Alex\_relative\_log\_power\_XGB.csv
+#### Alex\_Gilberto\_relative\_log\_power\_XGB.csv
 
 **Features :** This dataset consist in the normalized log power in 6 different frequency band (0.1 - 4 ; 4- 8 ; 8 - 15 ; 15 - 30 ; 30 - 90 ; 90 - 170 Hz) and for each channel. Power spectral density was estimated using Welch&#39;s method (window of 512 sample, 25% overlap). PSD was averaged in each band, normalized by the total power before applying a logarithm. Total size of this dataset is 6 x 16 = 96 features.
 
 **Model :** XGB, 10 bags
 
-#### Alex\_all\_flat\_dataset\_XGB.csv
+#### Alex\_Gilberto\_all\_flat\_dataset\_XGB.csv
 
 **Features :** This dataset include the relative log power dataset mentioned before with the addition of various measures including signal statistics (mean, min, max, variance, 90th and 10th percentiles), AR error coefficient (order 5), Petrosian and Higuchi fractal dimension and Hurst exponent. Total size of this dataset is 21 x 16 = 336 features
 
 **Model :** XGB, 5 bags
 
-#### Alex\_autocorrmat\_TS\_XGB.csv
+#### Alex\_Gilberto\_autocorrmat\_TS\_XGB.csv
 
 **Features :** For each channel, an auto-correlation matrix was estimated by concatenating time-delayed single channel signal before estimation of correlation matrix. Signal was downsample by 2 and 8 logarithmically spaced delays were used (0, 1, 2, 4, 8, 16, 32, 64). Each of the autocorrelation matrices were projected into their respective riemannian tangent space (see [1], this operation can be seen as a kernel operation that unfold the natural structure of symmetric and positive define matrices) and vectorized to produce a single feature vector of 36 item. Total size of this dataset was 36 x 16 = 576.
 
 **Model :** XGB, 4 bags.
 
-#### Alex\_coherences\_transposed\_TS\_XGB.csv
+#### Alex\_Gilberto\_coherences\_transposed\_TS\_XGB.csv
 
 **Features** : This feature set is composed by cross-frequency coherence  (in the same 6 sub-band as in the relative log power features) of each channels, i.e. the estimation of coherence is achieved between pairs of frequency of the same channel instead to be between pairs of channels for each frequency band. This produce set of 6x6 coherence matrices, that are then projected in their tangent space and vectorized. Total size of this dataset is 21 x 16 = 336.
 
