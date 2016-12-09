@@ -4,7 +4,7 @@
 * [Alexandre Barachant](http://alexandre.barachant.org)
 * [Andriy Temko](https://scholar.google.com/citations?user=qgR0hx0AAAAJ)
 * [Feng Li]()
-* [Gilberto Titericz Junior]()
+* [Gilberto Titericz Junior](https://br.linkedin.com/in/gilberto-titericz-jr-6601357)
 
 **Contents** :
 
