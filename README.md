@@ -146,6 +146,7 @@ Table 3.
 Table 4.
 
 | Model name | Public Score |  Private Score |
+| --- | --- | --- |
 | **Ensemble** | **0.80630** | **0.80856** |
 
 ***comment:*** due to some reproducibility issues discovered during code release, the score of the ensemble obtained from this code is different from the one submitted durring the competition. New score shows a slight increase in private score and slight decrease in public score.
